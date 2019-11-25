@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, Link} from "gatsby"
+
 export default ({data}) => {
     console.log(data.allS3Asset.edges);
     var items = []
@@ -15,7 +16,7 @@ export default ({data}) => {
         items.push(
           <div>
             <Link
-            to={`/videos/${urlArr[3]}`}
+            to={`/date/${urlArr[3]}`}
             >
             {urlArr[3]}
             </Link>
