@@ -25,11 +25,6 @@ export default ({data}) => {
         )
       }
       names.push(urlArr[3]);
-      //For clicked component send the parsed array for that user into next page
-
-      // if (value.node.url.toLowerCase().includes("mp4")){
-      //     items.push(<li key={index}><a href={value.node.url}>{value.node.url}</a></li>)
-      // }
     }
     return (<div>{items}</div>)
 }

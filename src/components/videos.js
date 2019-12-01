@@ -7,7 +7,7 @@ export default (props) => {
     return (
         <StaticQuery
             query={graphql`
-                query HeadingQuery {
+                query videoQuery {
                     allS3Asset {
                         edges {
                             node {
@@ -20,7 +20,6 @@ export default (props) => {
             `}
             render={
                 data => {
-                    //console.log('bleh',data.allS3Asset.edges)
                     var items = []
                     var names = []
                     for (const [index, value] of data.allS3Asset.edges.entries()) {
