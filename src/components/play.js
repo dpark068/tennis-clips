@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import { Player } from 'video-react';
 import Iframe from 'react-iframe'
 
 export default (props) => {
@@ -30,10 +29,10 @@ export default (props) => {
                         //show the value
                         if (!names.includes(urlArr[5]) && value.node.Key.includes(props.uid)){
                           items.push(
-                            <li key={index}> part {count}
+                            <li key={index}> part {count} - {urlArr[5]}
                                 <div className="video">
                                     <Iframe url={value.node.url}
-                                        width="450px"
+                                        width="100%"
                                         height="450px"
                                         id="myId"
                                         className="myClassname"

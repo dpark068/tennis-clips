@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, Link} from "gatsby"
+import PlayerGrid from "../components/playerGrid"
 
 export default ({data}) => {
     console.log(data.allS3Asset.edges);
@@ -26,7 +27,13 @@ export default ({data}) => {
       }
       names.push(urlArr[3]);
     }
-    return (<div>{items}</div>)
+    return (
+      <div>
+        <h1 align="center">GoPro Tennis Sessions</h1>
+        <br></br>
+        <PlayerGrid></PlayerGrid>
+      </div>
+    )
 }
 
 export const query = graphql`
