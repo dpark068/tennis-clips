@@ -1,3 +1,11 @@
+.component {
+    background-color: #141414
+}
+
+h1 {
+    color: #fff;
+    margin: 2vw 0 0 0;
+}
 .playerGrid {
     margin: 3rem auto;
     max-width: 650px;
@@ -7,7 +15,7 @@
     border:0.3em solid rgba(0, 0, 0, 0.4);
     height: 10vw;
     width: 10vw;
-    margin: 0 2vw 0 0;
+    margin: 0 2vw 5vw 0;
     max-height: 200px;
     max-width: 200px;
     min-height: 84px;
@@ -26,4 +34,11 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.profileGateLabel {
+    width: 100%;
+    color: #fff;
+    font-size: 3.5vw;
+    opacity: 1;
 }

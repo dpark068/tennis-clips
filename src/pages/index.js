@@ -28,11 +28,7 @@ export default ({data}) => {
       names.push(urlArr[3]);
     }
     return (
-      <div>
-        <h1 align="center">GoPro Tennis Sessions</h1>
-        <br></br>
         <PlayerGrid></PlayerGrid>
-      </div>
     )
 }
 
