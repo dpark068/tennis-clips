@@ -1,0 +1,6 @@
+.container {    
+    display: flex;    
+    overflow-x: auto;
+    background-color: #141414;
+    margin: 0 0 0 20px;
+}

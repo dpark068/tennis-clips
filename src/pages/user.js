@@ -2,7 +2,9 @@ import {graphql, Link} from "gatsby"
 import { Router } from "@reach/router"
 import React from "react"
 import Videos from '../components/videos'
-  import Play from '../components/play'
+import Play from '../components/play'
+import NavBar from '../components/navBarr'
+
 const Time = ({data}) => {
     console.log(data.allS3Asset.edges);
     var items = []
@@ -32,7 +34,7 @@ const Time = ({data}) => {
     
     return (
         <div>
-            {items}
+            <NavBar></NavBar>
             <Router>
                 <Videos path="/user/:uid" />
                 <Play path="/user/:uid/video/:vid" />
