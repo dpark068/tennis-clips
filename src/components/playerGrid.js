@@ -13,20 +13,26 @@ export default ({ children }) => (
     <div class="container" align="center" id="divCenterAlign">
       <div class="row">
         <div class="col-sm" className={playerGridStyles.colBorder}>
-          <a href="/user/andrew">
-            <img src={'/images/profile/andrew.png'} height="100%" width="100%"></img>
+          <Link
+            key='1'
+            to={`/user/andrew`}
+            >
+            <img src={'/images/profile/andrew.jpeg'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Andrew</span>
-          </a>
-        </div>
-        <div class="col-sm" className={playerGridStyles.colBorder}>
-          <a href="/user/danpark">
-            <img src={'/images/profile/danpark.jpeg'} height="100%" width="100%"></img>
-            <span className={playerGridStyles.profileName}>Dan</span>
-          </a>
+          </Link>
         </div>
         <div class="col-sm" className={playerGridStyles.colBorder}>
           <Link
-            key='1'
+            key='2'
+            to={`/user/danpark`}
+            >
+            <img src={'/images/profile/danpark.jpeg'} height="100%" width="100%"></img>
+            <span className={playerGridStyles.profileName}>Dan</span>
+          </Link>
+        </div>
+        <div class="col-sm" className={playerGridStyles.colBorder}>
+          <Link
+            key='3'
             to={`/user/dan`}
             >
             <img src={'/images/profile/dheeraj.jpeg'} height="100%" width="100%"></img>
@@ -37,16 +43,22 @@ export default ({ children }) => (
       <div class="row">
       <div class="col-sm"></div>
         <div class="col-sm" className={playerGridStyles.colBorder}>
-          <a href="/user/highlights">
-            <img src={'/images/profile/tennis_highlights.jpg'} height="100%" width="100%"></img>
+          <Link
+            key='4'
+            to={`/user/highlights`}
+            >
+            <img src={'/images/profile/tennis_highlights.jpeg'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Highlights</span>
-          </a>
+          </Link>
         </div>
         <div class="col-sm" className={playerGridStyles.colBorder}>
-          <a href="/user/misc">
-            <img src={'/images/profile/misc.jpg'} height="100%" width="100%"></img>
+          <Link
+            key='5'
+            to={`/user/misc`}
+            >
+            <img src={'/images/profile/misc.jpeg'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Misc</span>
-          </a>
+          </Link>
         </div>
         <div class="col-sm"></div>
       </div>
