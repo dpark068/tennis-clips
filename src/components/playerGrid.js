@@ -17,7 +17,7 @@ export default ({ children }) => (
             key='1'
             to={`/user/andrew`}
             >
-            <img src={'/images/profile/andrew.jpeg'} height="100%" width="100%"></img>
+            <img src={'/images/profile/andrew.png'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Andrew</span>
           </Link>
         </div>
@@ -47,7 +47,7 @@ export default ({ children }) => (
             key='4'
             to={`/user/highlights`}
             >
-            <img src={'/images/profile/tennis_highlights.jpeg'} height="100%" width="100%"></img>
+            <img src={'/images/profile/tennis_highlights.jpg'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Highlights</span>
           </Link>
         </div>
@@ -56,7 +56,7 @@ export default ({ children }) => (
             key='5'
             to={`/user/misc`}
             >
-            <img src={'/images/profile/misc.jpeg'} height="100%" width="100%"></img>
+            <img src={'/images/profile/misc.jpg'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Misc</span>
           </Link>
         </div>
