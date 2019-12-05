@@ -1,4 +1,5 @@
 import React from "react"
+import { Link} from "gatsby"
 import playerGridStyles from "./playerGrid.module.css"
 
 export default ({ children }) => (
@@ -24,10 +25,13 @@ export default ({ children }) => (
           </a>
         </div>
         <div class="col-sm" className={playerGridStyles.colBorder}>
-          <a href="/user/dan">
+          <Link
+            key='1'
+            to={`/user/dan`}
+            >
             <img src={'/images/profile/dheeraj.jpeg'} height="100%" width="100%"></img>
             <span className={playerGridStyles.profileName}>Dheeraj</span>
-          </a>
+          </Link>
         </div>
       </div>
       <div class="row">
