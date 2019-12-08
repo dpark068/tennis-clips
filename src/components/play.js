@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import Iframe from 'react-iframe'
+import './play.css'
 
 export default (props) => {
     return (
@@ -27,18 +27,13 @@ export default (props) => {
                         //break up string by /
                         var urlArr = value.node.url.split('/');
                         //show the value
-                        if (!names.includes(urlArr[5]) && value.node.Key.includes(props.uid)){
+                        if (!names.includes(urlArr[5]) && value.node.Key.includes(props.uid) && value.node.Key.toLowerCase().includes("mp4")){
                           items.push(
-                            <li key={index}> part {count} - {urlArr[5]}
-                                <div className="video">
-                                    <Iframe url={value.node.url}
-                                        width="100%"
-                                        height="450px"
-                                        id="myId"
-                                        className="myClassname"
-                                        display="initial"
-                                        position="relative"
-                                        allowFullScreen="true"/>
+                            <li key={index} class="center-inner"> Part {count} - {urlArr[5]}
+                                <div className="video" class="center-inner">
+                                    <video height="455" width="650" controls>
+                                        <source src={value.node.url} type="video/mp4"/>
+                                    </video>
                                 </div>
                             </li>
                            )
@@ -48,7 +43,7 @@ export default (props) => {
                         names.push(urlArr[5]);
                     }
                     return (
-                        <div>
+                        <div class="center">
                             {items}
                         </div>
                     )
