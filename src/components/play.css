@@ -1,0 +1,11 @@
+.center{
+    margin: auto;
+    width: 100%;
+    background-color: #141414;
+}
+
+.center-inner{
+    margin: 0 auto;
+    width: 50%;
+    color: #fff;
+}
