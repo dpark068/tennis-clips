@@ -21,40 +21,46 @@ export default (props) => {
             `}
             render={
                 data => {
-                    var items = []
                     var itemmtest = []
                     var names = []
                     var randVideos = []
-                    for (const [index, value] of data.allS3Asset.edges.entries()) {
+                    var imageArr = []
+                    var regex = /mp4/gi;
 
+                    for (const [index, value] of data.allS3Asset.edges.entries()) {
+                        if (value.node.url.toLowerCase().includes('png')){
+                            imageArr.push(value.node.url);
+                            }
+                    }
+                    console.log('imageArr', imageArr)
+
+                    for (const [index, value] of data.allS3Asset.edges.entries()) {
                         //choose random videos - 10
                         if (randVideos.length < 11 && value.node.url.toLowerCase().includes('mp4') && Math.round(Math.random())){
-                            randVideos.push(
-                                <div className="video">
-                                    <video height="175" width="250" controls>
-                                        <source src={value.node.url} type="video/mp4"/>
-                                    </video>
-                                </div>
-                            )
+                            // randVideos.push(
+                            //     <div className="video">
+                            //         <video height="175" width="250" controls>
+                            //             <source src={value.node.url} type="video/mp4"/>
+                            //         </video>
+                            //     </div>
+                            // )
+
+                            //Check for thumbnail exist
+                            if (imageArr.includes(value.node.url.replace(regex,'png'))){
+                                randVideos.push(
+                                    <div className="video-thumbnail">
+                                        <a href={value.node.url}>
+                                            <img src={value.node.url.replace(regex,'png')} height="100%" width="100%" alt="Doesn't exist"></img>
+                                        </a>
+                                    </div>
+                                )
+                            }
+                            
                         }
                         //break up string by /
                         var urlArr = value.node.url.split('/');
                         //show the value
                         if (!names.includes(urlArr[4]) && value.node.Key.includes(props.uid)){
-                          //items.push(<li key={index}><a href={value.node.url}>{urlArr[3]}</a></li>)
-                          //can delete items -- will use itemmtest
-                          items.push(
-                            <div>
-                              <Link
-                              key={index}
-                              to={`/user/${urlArr[3]}/video/${urlArr[4]}`}
-                              >
-                              {urlArr[4]}
-                              </Link>
-                              <br></br>
-                            </div>
-                          )
-
                           itemmtest.push(
                             <Link
                             class="link-style"
@@ -67,6 +73,7 @@ export default (props) => {
                         }
                         names.push(urlArr[4]);
                     }
+
                     return (
                         <div class="head">
                             <br/>
