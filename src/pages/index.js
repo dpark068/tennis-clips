@@ -13,7 +13,6 @@ export default ({data}) => {
       
       //show the value
       if (!names.includes(urlArr[3])){
-        //items.push(<li key={index}><a href={value.node.url}>{urlArr[3]}</a></li>)
         items.push(
           <div>
             <Link
