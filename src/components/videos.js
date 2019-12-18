@@ -37,13 +37,7 @@ export default (props) => {
                     for (const [index, value] of data.allS3Asset.edges.entries()) {
                         //choose random videos - 10
                         if (randVideos.length < 11 && value.node.url.toLowerCase().includes('mp4') && Math.round(Math.random())){
-                            // randVideos.push(
-                            //     <div className="video">
-                            //         <video height="175" width="250" controls>
-                            //             <source src={value.node.url} type="video/mp4"/>
-                            //         </video>
-                            //     </div>
-                            // )
+
 
                             //Check for thumbnail exist
                             if (imageArr.includes(value.node.url.replace(regex,'png'))){
