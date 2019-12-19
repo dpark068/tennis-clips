@@ -24,11 +24,13 @@ export default (props) => {
                     var playUrl = {}
 
                     // three query param u,v,date
-                    const queryParam = queryString.parse(window.location.search);
+                    const win = typeof window !== 'undefined' && window.location.search;
+                    var queryParam = queryString.parse(win);
                     var items = [];
                     var names = [];
                     var regex = /mp4/gi;
                     var count = 1;
+
                     for (const [index, value] of data.allS3Asset.edges.entries()) {
 
                         //Check to see if queryParam matches with video id
