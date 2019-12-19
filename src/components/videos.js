@@ -14,6 +14,7 @@ export default (props) => {
                             node {
                                 Key
                                 url
+                                id
                             }
                         }
                     }
@@ -32,40 +33,47 @@ export default (props) => {
                             imageArr.push(value.node.url);
                             }
                     }
-                    console.log('imageArr', imageArr)
 
                     for (const [index, value] of data.allS3Asset.edges.entries()) {
                         //choose random videos - 10
                         if (randVideos.length < 11 && value.node.url.toLowerCase().includes('mp4') && Math.round(Math.random())){
-
-
                             //Check for thumbnail exist
                             if (imageArr.includes(value.node.url.replace(regex,'png'))){
                                 randVideos.push(
                                     <div className="video-thumbnail">
-                                        <a href={value.node.url}>
+                                        <Link
+                                            class="link-style"
+                                            key={index}
+                                            to={`../watch?u=${urlArr[3]}&date=${urlArr[4]}&v=${value.node.id}`}
+                                            >
                                             <img src={value.node.url.replace(regex,'png')} height="100%" width="100%" alt="Doesn't exist"></img>
-                                        </a>
+                                        </Link>
                                     </div>
                                 )
                             }
-                            
                         }
+
                         //break up string by /
                         var urlArr = value.node.url.split('/');
-                        //show the value
-                        if (!names.includes(urlArr[4]) && value.node.Key.includes(props.uid)){
-                          itemmtest.push(
-                            <Link
-                            class="link-style"
-                            key={index}
-                            to={`/user/${urlArr[3]}/video/${urlArr[4]}`}
-                            >
-                            {urlArr[4]}
-                            </Link>
-                          )
+
+                        //push into dates drop down if date has video
+                        if (!names.includes(urlArr[4]) && value.node.Key.includes(props.uid) && value.node.url.toLowerCase().includes("mp4")){
+                            console.log(value.node.Key)
+                            itemmtest.push(
+                                <div>
+                                    <Link
+                                    class="link-style"
+                                    key={index}
+                                    to={`/watch?u=${urlArr[3]}&date=${urlArr[4]}&v=${value.node.id}`}
+                                    >
+                                    {urlArr[4]}
+                                    </Link>
+                                    <br/>
+                                </div>
+                            );
+                            names.push(urlArr[4]);
                         }
-                        names.push(urlArr[4]);
+                        
                     }
 
                     return (
@@ -81,16 +89,12 @@ export default (props) => {
                                 </div>
                             </div>
                             <br/>
+                            <br/>
                             <h3 class="title">Trending Videos</h3>
                             <HorizontalCard>
                                 {randVideos}
                             </HorizontalCard>
                             <br/>
-                            <br/>
-                            <h3 class="title">Recently Uploaded</h3>
-                            <HorizontalCard>
-                                {randVideos}
-                            </HorizontalCard>
                         </div>
                     )
                 }
