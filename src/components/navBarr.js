@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import navBarStyles from './navBarr.module.css'
 
 export default ({ children }) => (
@@ -11,8 +12,20 @@ export default ({ children }) => (
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" className={navBarStyles.item} href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" className={navBarStyles.item} href="/user/highlights">Highlights</a>
-          <a class="nav-item nav-link" className={navBarStyles.item} href="/user/misc">Misc</a>
+          <Link
+            class="nav-item nav-link"
+            className={navBarStyles.item}
+            to="/user/highlights"
+          >
+            Highlights
+          </Link>
+          <Link
+            class="nav-item nav-link"
+            className={navBarStyles.item}
+            to="/user/misc"
+          >
+            Misc
+          </Link>
         </div>
       </div>
     </nav>

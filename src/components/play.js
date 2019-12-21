@@ -45,9 +45,14 @@ export default (props) => {
                             items.push(
                                 <li key={index} class="center-inner"> Part {count} - {urlArr[5]}
                                     <div className="video-thumbnail">
-                                            <a href={window.location.pathname + `?v=${value.node.id}&u=${urlArr[3]}&date=${urlArr[4]}`}>
+                                            
+                                            <Link
+                                                class="link-style"
+                                                key={index}
+                                                to={`/watch?u=${urlArr[3]}&date=${urlArr[4]}&v=${value.node.id}`}
+                                                >
                                                 <img src={value.node.url.replace(regex,'png')} height="100%" width="100%" alt="Doesn't exist"></img>
-                                            </a>
+                                            </Link>
                                     </div>
                                 </li>
                             )
@@ -56,14 +61,13 @@ export default (props) => {
 
                         names.push(urlArr[5]);
                     }
-                    console.log(queryString.parse(window.location.search));
                     return (                        
                         <div class="center">
                             
                                 <div class="row">
                                 <div class="col-8">
                                     <div className="video" class="center-inner">
-                                        <video height="455" width="650" controls>
+                                        <video height="455" width="650" controls key={playUrl.url}>
                                             <source src={playUrl.url} type="video/mp4"/>
                                         </video>
                                         <h2 class="vid-title">{playUrl.Key}</h2>

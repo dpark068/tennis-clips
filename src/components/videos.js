@@ -44,8 +44,8 @@ export default (props) => {
                                         <Link
                                             class="link-style"
                                             key={index}
-                                            to={`../watch?u=${urlArr[3]}&date=${urlArr[4]}&v=${value.node.id}`}
-                                            >
+                                            to={`/watch?u=${urlArr[3]}&date=${urlArr[4]}&v=${value.node.id}`}
+                                        >
                                             <img src={value.node.url.replace(regex,'png')} height="100%" width="100%" alt="Doesn't exist"></img>
                                         </Link>
                                     </div>
