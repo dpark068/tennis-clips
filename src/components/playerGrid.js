@@ -26,7 +26,7 @@ export default ({ children }) => (
             key='2'
             to={`/user/danpark`}
             >
-            <img src={'/images/profile/danpark.jpeg'} height="160px" width="100%"></img>
+            <img src={'/images/profile/danpark.png'} height="160px" width="100%"></img>
             <span className={playerGridStyles.profileName}>Dan</span>
           </Link>
         </div>
