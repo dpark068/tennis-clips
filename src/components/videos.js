@@ -58,7 +58,6 @@ export default (props) => {
 
                         //push into dates drop down if date has video
                         if (!names.includes(urlArr[4]) && value.node.Key.includes(props.uid) && value.node.url.toLowerCase().includes("mp4")){
-                            console.log(value.node.Key)
                             itemmtest.push(
                                 <div>
                                     <Link
